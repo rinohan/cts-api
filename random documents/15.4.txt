@@ -1,0 +1,19 @@
+Creating API interface based on REST specification I use:
+1) mySQL database;
+2) libraries:
+	a) springframework:
+		- http,
+		- web,
+		- data,
+		- stereotype,
+		- boot,
+	b) javax:
+		- persistence,
+	c) lombok,
+	d) java:
+		- util;
+3) HTTP methods:
+	a) get,
+	b) post,
+	c) put,
+	d) delete.
