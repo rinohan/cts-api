@@ -1,4 +1,4 @@
-Creating API interface based on REST specification I use:
+Creating API interface based on REST specification I am using:
 1) mySQL database;
 2) libraries:
 	a) springframework:
