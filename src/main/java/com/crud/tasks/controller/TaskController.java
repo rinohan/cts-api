@@ -32,13 +32,19 @@ public class TaskController {
     }
 
     @DeleteMapping(value = "{taskId}")
-    public ResponseEntity<Void> deleteTask (@PathVariable Long taskId) {
-        return ResponseEntity.ok().build();
+    public void deleteTask(@PathVariable Long taskId) throws TaskNotFoundException {
+
+        if (service.getTask(taskId)!=null)
+            service.deleteTask(taskId);
+        else
+            throw new TaskNotFoundException();
     }
 
     @PutMapping
     public ResponseEntity<TaskDto> updateTask (@RequestBody TaskDto taskDto) {
-        return ResponseEntity.ok(new TaskDto(1L, "Edited test title", "Test content"));
+        Task task = taskMapper.mapToTask(taskDto);
+        Task savedTask = service.saveTask(task);
+        return ResponseEntity.ok(taskMapper.mapToTaskDto(savedTask));
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
