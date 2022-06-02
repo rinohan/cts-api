@@ -6,7 +6,7 @@ goto fail
 
 :runbrowser
 @echo off
-start "" C:\Program Files\Mozilla Firefox\firefox.exe" http://localhost:8080/crud/v1/task/getTasks
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe"
 echo Firefox has started
 pause
 goto end
